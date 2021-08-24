@@ -1,0 +1,157 @@
+from Stats import Stats
+import io
+
+def test_stats(monkeypatch, capsys):
+    '''Test stats properly import'''
+    monkeypatch.setattr('sys.stdin', io.StringIO("1\n"))
+
+    StatsObject = Stats()
+    StatsObject.import_stats()
+
+    captured = capsys.readouterr().out
+
+    assert "Stats!\n"
+    "Week 1\n"
+    "\n"
+    "Rushing\n"
+    "M.Mack carried 25 times for 174 yards and 1 touchdowns\n"
+    "C.McCaffrey carried 19 times for 128 yards and 2 touchdowns\n"
+    "S.Barkley carried 11 times for 120 yards and 0 touchdowns\n"
+    "D.Cook carried 21 times for 111 yards and 2 touchdowns\n"
+    "M.Ingram carried 14 times for 107 yards and 2 touchdowns\n"
+    "\n"
+
+    "Passing\n"
+    "A.Dalton passed 51 times for 418 yards and 2 touchdowns\n"
+    "D.Prescott passed 32 times for 405 yards and 4 touchdowns\n"
+    "M.Stafford passed 45 times for 385 yards and 3 touchdowns\n"
+    "C.Keenum passed 44 times for 380 yards and 3 touchdowns\n"
+    "P.Mahomes passed 33 times for 378 yards and 3 touchdowns\n"
+    "\n"
+
+    "Receiving\n"
+    "S.Watkins received 9 times for 198 yards and 3 touchdowns\n"
+    "J.Ross III received 7 times for 158 yards and 2 touchdowns\n"
+    "M.Gallup received 7 times for 158 yards and 0 touchdowns\n"
+    "D.Jackson received 8 times for 154 yards and 2 touchdowns\n"
+    "M.Brown received 4 times for 147 yards and 2 touchdowns\n"
+    "\n"
+
+    "Two Point Conv\n"
+    "S.Darnold threw for 1 two point conversion during the game.\n"
+    "K.Murray threw for 1 two point conversion during the game.\n"
+    "J.Garoppolo threw for 1 two point conversion during the game.\n"
+    "L.Bell received for 1 two point conversion during the game.\n"
+    "C.Kirk received for 1 two point conversion during the game.\n"
+    "D.Samuel received for 1 two point conversion during the game.\n"
+    "D.Sproles rushed for 1 two point conversion during the game.\n"
+    "M.Mack rushed for 1 two point conversion during the game.\n"
+    "\n"
+
+    "Fumbles\n"
+    "C.Newton fumbled 1 time(s) during the game.\n"
+    "D.Moore fumbled 1 time(s) during the game.\n"
+    "\n"
+
+    "Interceptions\n"
+    "B.Mayfield threw 3 interception(s) during the game.\n"
+    "J.Winston threw 3 interception(s) during the game.\n"
+    "M.Ryan threw 2 interception(s) during the game.\n"
+    "J.Allen threw 2 interception(s) during the game.\n"
+    "M.Trubisky threw 1 interception(s) during the game.\n"
+    "\n"
+
+    "Defensive Touchdowns\n"
+    "K.Fuller got 0 touchdown(s) during the game.\n"
+    "K.Mack got 0 touchdown(s) during the game.\n"
+    "H.Clinton-Dix got 0 touchdown(s) during the game.\n"
+    "R.Smith got 0 touchdown(s) during the game.\n"
+    "D.Trevathan got 0 touchdown(s) during the game.\n"
+    "\n"
+
+    "Fumbles Recovered\n"
+    "A.Jones recovered a fumble during the game.\n"
+    "C.Newton recovered a fumble during the game.\n"
+    "D.Moore recovered a fumble during the game.\n"
+    "J.Goff recovered a fumble during the game.\n"
+    "A.Blythe recovered a fumble during the game.\n"
+    "\n"
+
+    "Interceptions Caught\n"
+    "A.Harris caught 2 interception(s) during the game.\n"
+    "A.Amos caught 1 interception(s) during the game.\n"
+    "J.Bradberry caught 1 interception(s) during the game.\n"
+    "C.Littleton caught 1 interception(s) during the game.\n"
+    "L.Ryan caught 1 interception(s) during the game.\n"
+    "\n"
+
+    "Sacks\n"
+    "D.Kennard got 3 sack(s) during the game.\n"
+    "C.Wake got 2 sack(s) during the game.\n"
+    "L.Floyd got 2 sack(s) during the game.\n"
+    "D.Fowler got 2 sack(s) during the game.\n"
+    "M.Garrett got 2 sack(s) during the game.\n"
+    "\n"
+
+    "Safeties\n"
+    "K.Fuller got a tackle during the game, resulting in a safety.\n"
+    "K.Mack got a tackle during the game, resulting in a safety.\n"
+    "H.Clinton-Dix got a tackle during the game, resulting in a safety.\n"
+    "R.Smith got a tackle during the game, resulting in a safety.\n"
+    "D.Trevathan got a tackle during the game, resulting in a safety.\n"
+    "\n"
+
+    "Fumbles Forced\n"
+    "K.Mack forced 1 fumble(s) during the game.\n"
+    "C.Littleton forced 1 fumble(s) during the game.\n"
+    "S.Ebukam forced 1 fumble(s) during the game.\n"
+    "D.Wilson forced 1 fumble(s) during the game.\n"
+    "T.Waynes forced 1 fumble(s) during the game.\n"
+    "\n"
+
+    "Field Goals Made\n"
+    "H.Butker forced 4 and 0 during the game.\n"
+    "Z.Gonzalez forced 4 and 0 during the game.\n"
+    "S.Gostkowski forced 4 and 0 during the game.\n"
+    "G.Zuerlein forced 3 and 0 during the game.\n"
+    "R.Gould forced 3 and 0 during the game.\n"
+    "\n"
+
+    "Extra Points\n"
+    "J.Tucker successfully made 8 extra point(s) during the game.\n"
+    "C.Santos successfully made 5 extra point(s) during the game.\n"
+    "B.Maher successfully made 5 extra point(s) during the game.\n"
+    "H.Butker successfully made 4 extra point(s) during the game.\n"
+    "D.Bailey successfully made 4 extra point(s) during the game.\n"
+    "\n"
+
+    "Quarterback Hits\n"
+    "K.Fuller successfully got a quarterback hit during the game.\n"
+    "K.Mack successfully got a quarterback hit during the game.\n"
+    "H.Clinton-Dix successfully got a quarterback hit during the game.\n"
+    "R.Smith successfully got a quarterback hit during the game.\n"
+    "D.Trevathan successfully got a quarterback hit during the game.\n"
+    "\n"
+
+    "Tackle Assist\n"
+    "J.Baker assisted 7 tackle(s) during the game.\n"
+    "T.Davis assisted 7 tackle(s) during the game.\n"
+    "J.Hicks assisted 7 tackle(s) during the game.\n"
+    "J.Jewell assisted 7 tackle(s) during the game.\n"
+    "C.Littleton assisted 6 tackle(s) during the game.\n"
+    "\n"
+
+    "Solo Tackles\n"
+    "E.Rowe got 9 solo tackle(s) during the game. \n"
+    "T.Flowers got 9 solo tackle(s) during the game.\n"
+    "T.Walker got 9 solo tackle(s) during the game.\n"
+    "X.Woods got 9 solo tackle(s) during the game.\n"
+    "L.Vander Esch got 9 solo tackle(s) during the game.\n"
+    "\n"
+
+    "Pass Defensed\n"
+    "K.Fuller stopped 0 passed from being completed during the game.\n"
+    "K.Mack stopped 0 passed from being completed during the game.\n"
+    "H.Clinton-Dix stopped 0 passed from being completed during the game.\n"
+    "R.Smith stopped 0 passed from being completed during the game.\n"
+    "D.Trevathan stopped 0 passed from being completed during the game.\n" == captured[-3:3000]

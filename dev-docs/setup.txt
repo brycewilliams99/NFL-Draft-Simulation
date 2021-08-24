@@ -1,0 +1,20 @@
+Python
+
+  1. The first thing would be to make sure you have Python3 installed onto your machine.
+  2. After, make sure that Python3 is up to date to the newest version.
+  
+Atom
+
+  1. Atom is not that difficult to set up, all you need to do is just download it from their website.
+     Follow the install wizard and boom you completed it.
+  2. There is nothing special that you need to add to the IDE.
+     
+NFLGame
+  
+  1. Go to the following link https://pypi.org/project/nflgame/ and you can either install it from the website
+     or type pip install nflgame in the terminal.
+     
+Coverage and Pytest
+  
+  1. For testing purposes and checking the quality of code, you would need to download coverage and pytest.
+     You can do both by doing pip install coverage, and pip install pytest.
